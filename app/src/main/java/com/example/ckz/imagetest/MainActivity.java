@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private SeekBar sb_hue;
     private SeekBar sb_saturation;
     private SeekBar sb_lum;
-    private Button btn_reset , btn_save , btn_next;
+    private Button btn_reset , btn_save , btn_next , btn_to_third;
     private final static int MAX_VALUE = 255;
     private final static int MID_VALUE = 127;
     private float mHue = 0.0f;
@@ -69,6 +69,14 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+                startActivity(intent);
+            }
+        });
+        btn_to_third = (Button) findViewById(R.id.btn_to_third);
+        btn_to_third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Main3Activity.class);
                 startActivity(intent);
             }
         });
