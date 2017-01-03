@@ -76,5 +76,12 @@
         android:layout_alignParentBottom="true"
         android:text="保存"
         android:id="@+id/btn_save"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_next"
+        android:text="跳转"/>
 
 </RelativeLayout>

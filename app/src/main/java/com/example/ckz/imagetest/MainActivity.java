@@ -2,6 +2,7 @@ package com.example.ckz.imagetest;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private SeekBar sb_hue;
     private SeekBar sb_saturation;
     private SeekBar sb_lum;
-    private Button btn_reset , btn_save;
+    private Button btn_reset , btn_save , btn_next;
     private final static int MAX_VALUE = 255;
     private final static int MID_VALUE = 127;
     private float mHue = 0.0f;
@@ -61,6 +62,14 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             public void onClick(View v) {
                 MainActivityPermissionsDispatcher.getStorgeWithCheck(MainActivity.this);
                 FileUntils.saveBitmap(MainActivity.this,afBitmap);
+            }
+        });
+        btn_next = (Button) findViewById(R.id.btn_next);
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+                startActivity(intent);
             }
         });
     }
