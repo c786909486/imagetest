@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             @Override
             public void onClick(View v) {
                 MainActivityPermissionsDispatcher.getStorgeWithCheck(MainActivity.this);
-                FileUntils.saveBitmap(afBitmap);
+                FileUntils.saveBitmap(MainActivity.this,afBitmap);
             }
         });
     }
@@ -137,6 +137,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @OnNeverAskAgain({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
     void neverAskAgain() {
     }
-    
+
 }
 
